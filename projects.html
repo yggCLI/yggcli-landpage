@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~/yggwach/projects</title>
+    <style>
+        body {
+            background: #000;
+            color: #aaa;
+            font-family: monospace;
+            line-height: 1.5;
+            max-width: 80ch;
+            margin: 40px auto;
+            padding: 0 10px;
+        }
+        
+        pre {
+            white-space: pre-wrap;
+        }
+        
+        a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover, a.active {
+            color: #00ff00;
+        }
+        
+        .prompt::before {
+            content: "$ ";
+            color: #666;
+        }
+        
+        .project {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px dashed #333;
+        }
+        
+        .project-title {
+            color: #00ff00;
+            margin-bottom: 10px;
+        }
+        
+        .code-snippet {
+            background: #111;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 2px solid #00ff00;
+        }
+        
+        .nav a {
+            margin-right: 15px;
+        }
+        
+        .backlink {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #333;
+        }
+    </style>
+</head>
+<body>
+<pre>
+<span class="prompt">cd ~/projects</span>
+<span class="nav">
+<a href="index.html">[HOME]</a>    <a href="articles.html">[ARTICLES]</a>    <a href="projects.html">[PROJECTS]</a>    <a href="about.html">[ABOUT]</a>
+</span>
+<span class="prompt">ls -la</span>
+<div class="project">
+    <div class="project-title">GraphQL-API-Project/</div>
+    A modern GraphQL API implementation with efficient data querying.
+    <div class="code-snippet">
+    type Query {
+        user(id: ID!): User
+        posts: [Post!]!
+    }
+
+    type User {
+        id: ID!
+        name: String!
+        posts: [Post!]!
+    }
+    </div>
+    <a href="https://github.com/yggCLI/GraphQL-API-Project">git clone git@github.com:yggCLI/GraphQL-API-Project.git</a>
+</div>
+
+<div class="project">
+    <div class="project-title">FastAPI-CRUD-Application/</div>
+    High-performance CRUD application with async operations.
+    <div class="code-snippet">
+    @app.post("/items/")
+    async def create_item(item: Item):
+        return {"item_id": item.id, "status": "created"}
+    
+    @app.get("/items/{item_id}")
+    async def read_item(item_id: int):
+        return {"item_id": item_id}
+    </div>
+    <a href="https://github.com/yggCLI/FastAPI-CRUD-Application">git clone git@github.com:yggCLI/FastAPI-CRUD-Application.git</a>
+</div>
+
+<div class="project">
+    <div class="project-title">ConciseLog/</div>
+    Minimal logging solution for modern applications.
+    <div class="code-snippet">
+    logger.info("System initialization complete")
+    logger.debug("Connection established: ${conn_id}")
+    logger.warning("Resource usage at 85%")
+    </div>
+    <a href="https://github.com/yggCLI/ConciseLog">git clone git@github.com:yggCLI/ConciseLog.git</a>
+</div>
+
+<div class="backlink">
+<span class="prompt">cd ..</span>
+<a href="index.html">cd ~/</a>
+</div>
+</pre>
+<script>
+// Highlight current page in navigation
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+    }
+});
+</script>
+</body>
+</html>

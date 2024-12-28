@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~/yggwach</title>
+    <style>
+        body {
+            background: #000;
+            color: #aaa;
+            font-family: monospace;
+            line-height: 1.5;
+            max-width: 80ch;
+            margin: 40px auto;
+            padding: 0 10px;
+        }
+        
+        pre {
+            white-space: pre-wrap;
+        }
+        
+        a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover, a.active {
+            color: #00ff00;
+        }
+        
+        .quote {
+            display: none;
+            margin: 20px 0;
+            color: #aaa;
+        }
+        
+        .quote.active {
+            display: block;
+        }
+        
+        .prompt::before {
+            content: "$ ";
+            color: #666;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px dashed #333;
+            margin: 20px 0;
+        }
+        
+        .nav a {
+            margin-right: 15px;
+        }
+
+        #articles-status {
+            margin-top: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<pre>
+<span class="prompt">whoami</span>
+yggwach
+<span class="prompt">ls /home/yggwach/</span>
+<span class="nav">
+<a href="index.html">[HOME]</a>    <a href="articles.html">[ARTICLES]</a>    <a href="projects.html">[PROJECTS]</a>    <a href="about.html">[ABOUT]</a>
+</span>
+<span class="prompt">cat /etc/motd</span>
+<div class="quote active">"A digital nomad exploring the depths of computation."</div>
+<div class="quote">"Where code meets curiosity, systems bend to will."</div>
+<div class="quote">"Building tomorrow's tools with yesterday's wisdom."</div>
+<div class="quote">"In the realm of bits and bytes, seeking elegant solutions."</div>
+<div class="quote">"The command line is my canvas, code is my art."</div>
+<hr>
+<span class="prompt">finger yggwach</span>
+<a href="mailto:yggwach@gmail.com">yggwach@gmail.com</a>
+</pre>
+<script>
+const quotes = document.querySelectorAll('.quote');
+let currentQuote = 0;
+
+function rotateQuotes() {
+    quotes.forEach(q => q.classList.remove('active'));
+    quotes[currentQuote].classList.add('active');
+    currentQuote = (currentQuote + 1) % quotes.length;
+}
+
+setInterval(rotateQuotes, 5000);
+
+// Get current page and highlight corresponding nav link
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+    }
+});
+</script>
+</body>
+</html>
