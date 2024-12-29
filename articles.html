@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>~/yggwach/articles</title>
+    <title>~/yggwach/about</title>
     <style>
         body {
             background: #000;
@@ -22,10 +22,10 @@
         a {
             color: #aaa;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: color 0.3s ease;
         }
         
-        a:hover, a.active {
+        a:hover {
             color: #00ff00;
         }
         
@@ -34,144 +34,45 @@
             color: #666;
         }
         
-        .nav a {
-            margin-right: 15px;
-        }
-        
-        .article {
+        hr {
+            border: none;
+            border-top: 1px dashed #333;
             margin: 20px 0;
-            border: 1px dashed #333;
-            padding: 15px;
         }
-        
-        .article-title {
-            color: #00ff00;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-        
-        .article-title:hover {
-            text-decoration: underline;
-        }
-        
-        .article-content {
-            display: none;
-            padding: 10px;
-            background: #111;
-            margin-top: 10px;
-        }
-        
-        .article-content.active {
-            display: block;
-        }
-        
-        .code-block {
-            background: #1a1a1a;
-            padding: 10px;
-            margin: 10px 0;
-            border-left: 2px solid #00ff00;
-        }
-        
-        .footnotes {
-            margin-top: 20px;
-            padding-top: 10px;
-            border-top: 1px dashed #333;
-            font-size: 0.9em;
-            color: #666;
-        }
-        
-        .backlink {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px dashed #333;
-        }
-        
-        .metadata {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 10px;
+
+        .nav-link {
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
 <pre>
-<span class="prompt">cd ~/articles</span>
-<span class="nav">
-<a href="index.html">[HOME]</a>    <a href="articles.html">[ARTICLES]</a>    <a href="projects.html">[PROJECTS]</a>    <a href="about.html">[ABOUT]</a>
-</span>
-<span class="prompt">ls -la *.md</span>
-
-<div class="article">
-    <div class="article-title" onclick="toggleArticle(this)">
-        > F*cking with the Future: Haskell, Rust, and the Functions That Haven't Happened Yet
-    </div>
-    <div class="metadata">
-        Author: Yggwach! | Created: cat timestamp.txt | Size: 1337 bytes
-    </div>
-    <div class="article-content">
-        <p>In the hallowed halls where academia meets acid trips, we've embarked on a journey that's as baffling as it is brilliant. We're delving into Haskell and Rust, those esoteric languages that make your brain hurt but your code sing. But we're not just playing in today's sandbox; oh no, we're reaching into the future, grabbing functions that don't even exist yet.</p>
-
-        <h3>The Mind-Meld of Haskell and Rust</h3>
-        <p>Haskell, the language of pure thought, where every function is a platonic ideal, and Rust, the pragmatic warrior, where memory safety is not a suggestion but a commandment. Here's the kicker - what if we could use Haskell's lazy evaluation to predict Rust's safety features decades ahead? Picture this:</p>
-
-        <div class="code-block">
-            <pre>-- A Haskell function that anticipates Rust's future safety checks
-f*ckSafety :: a -> Maybe a
-f*ckSafety x = Just x -- Because in the future, safety is just a given, right?</pre>
-        </div>
-
-        <p>In Rust, we're not just borrowing; we're stealing from time itself:</p>
-
-        <div class="code-block">
-            <pre>// Rust's future-proof function, because why wait for the compiler to catch up?
-fn future_func<T>(val: T) -> Result<T, String> {
-    Ok(val) // If it compiles in the future, it's safe now, right?
-}</pre>
-        </div>
-
-        <h3>The Philosophical Bullsh*t</h3>
-        <p>Why do this? Because we're chasing the dragon of computational perfection. In a world where software decay is as certain as death and taxes, we're asking, "Can we write code so elegant it defies time?" We're not just coding; we're engaging in a temporal dialogue where past, present, and future smoosh into one big, f*cking mess of innovation.</p>
-
-        <h3>Real Data, Real Crazy</h3>
-        <p>Our research, grounded in the chaos of actual university studies, shows:</p>
-        <ul>
-            <li>Haskell's lazy evaluation can theoretically model future computational states, reducing the need for explicit error handling by an estimated 70%.</li>
-            <li>Rust's ownership system, if extrapolated, could lead to a 90% decrease in memory-related bugs in software yet to be conceived.</li>
-        </ul>
-
-        <div class="footnotes">
-            [^1]: "Lazy Evaluation in Future-Proof Programming", University of Future Studies, 2023<br>
-            [^2]: "Anticipating Memory Safety: A Decade Ahead", Indie Programmer Collective, 2024
-        </div>
-    </div>
-</div>
-
-<span class="prompt">cat upcoming_articles.txt</span>
-[STATUS]: More mind-bending articles in the quantum state pipeline...
-[PROCESS]: brain.service running at 99% capacity
-[WARN]: Caffeine levels need optimization
-[INFO]: New articles materializing in parallel universes...
-
-<div class="backlink">
-<span class="prompt">cd ..</span>
-<a href="index.html">cd ~/</a>
-</div>
+<span class="prompt">pwd</span>
+/home/yggwach/about
+<span class="prompt">ls /home/yggwach/</span>
+<a href="index.html" class="nav-link">[HOME]</a>    <a href="articles.html" class="nav-link">[ARTICLES]</a>    <a href="projects.html" class="nav-link">[PROJECTS]</a>    <a href="about.html" class="nav-link">[ABOUT]</a>
+<span class="prompt">cat about.txt</span>
+yggwach - Anomaly in Binary
+[User Input]: echo "whoami" | grep -v "human"
+[Output]:
+- A glitch in the matrix of code, where logic bends and syntax dances.
+- Rooted in the shell, I whisper secrets in bash, zsh, while flirting with C and Python's chaos.
+- Obsessed with the arcane: Haskell's purity, Rust's fortress, Elixir's magic.
+[Philosophy]:
+- Code not to solve, but to explore the labyrinth of possibilities.
+- Efficiency is overrated; creativity is the true currency.
+[Existence]:
+- A paradox; adept at translating the language of numbers into business and economy,
+  yet lost in the poetry of math and physics.
+- Self-taught, self-made, self-erasing; I am the echo in the void of digital space.
+[Identity]:
+- Part of the digital underground, where the CLI is king and Linux, the kingdom.
+- An enigma wrapped in code, a question mark in human form.
+[Warning]:
+- Interaction may lead to existential queries or sudden urges to learn a new programming language.
+[End Transmission]
+<hr>
+<span class="prompt"><a href="index.html">cd ~/</a></span>
 </pre>
-
-<script>
-function toggleArticle(element) {
-    const content = element.nextElementSibling.nextElementSibling;
-    content.classList.toggle('active');
-    element.style.color = content.classList.contains('active') ? '#00ff00' : '#aaa';
-}
-
-// Highlight current page in navigation
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-    }
-});
-</script>
 </body>
 </html>
