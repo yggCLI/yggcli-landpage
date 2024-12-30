@@ -53,7 +53,6 @@
         .nav a {
             margin-right: 15px;
         }
-
         #articles-status {
             margin-top: 10px;
             color: #666;
@@ -66,7 +65,7 @@
 yggwach
 <span class="prompt">ls /home/yggwach/</span>
 <span class="nav">
-<a href="index.html">[HOME]</a>    <a href="articles.html">[ARTICLES]</a>    <a href="projects.html">[PROJECTS]</a>    <a href="about.html">[ABOUT]</a>
+<a href="index.html">[HOME]</a>    <a href="https://yggcli.bearblog.dev/blog/" target="_blank">[BLOG]</a>    <a href="projects.html">[PROJECTS]</a>    <a href="about.html">[ABOUT]</a>
 </span>
 <span class="prompt">cat /etc/motd</span>
 <div class="quote active">"87.6% of programmers agree: reality is just a simulation."</div>
@@ -81,15 +80,12 @@ yggwach
 <script>
 const quotes = document.querySelectorAll('.quote');
 let currentQuote = 0;
-
 function rotateQuotes() {
     quotes.forEach(q => q.classList.remove('active'));
     quotes[currentQuote].classList.add('active');
     currentQuote = (currentQuote + 1) % quotes.length;
 }
-
 setInterval(rotateQuotes, 5000);
-
 // Get current page and highlight corresponding nav link
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav a').forEach(link => {
